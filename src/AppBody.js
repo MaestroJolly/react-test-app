@@ -17,7 +17,7 @@ class AppBody extends Component {
         const dataList = data.map( datum =>{
             return (
                 <div key={ datum.id }>
-                    <p>Title II: { datum.title },</p>
+                    <p>Name: { datum.name },</p>
                     <p>Sex: { datum.sex }</p>
                 </div>
             )

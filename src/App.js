@@ -3,17 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import AppBody from './AppBody';
 import AppBodyFunc from './AppBodyFunc';
+import AppBodyEdit from "./AppBodyEdit";
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
       data: [
-        { title: 'Sofware Engineer', sex: 'Male', age: 25, id: 1 },
-        { title: 'Data Scientist', sex: 'Female', age: 15, id: 2 }
+        { title: 'Sofware Engineer', name: 'Doe', sex: 'Male', age: 25, id: 1 },
+        { title: 'Data Scientist', name:'John', sex: 'Female', age: 15, id: 2 }
       ]
     }
   }
+
+  addData = (datum) => {
+    datum.id = Math.random();
+    let data = [...this.state.data, datum];
+    this.setState({
+      data: data
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -27,6 +37,8 @@ class App extends Component {
           <AppBody data={ this.state.data } />
           {/* Functional/UI Component */}
           <AppBodyFunc data={ this.state.data } />
+          {/* Class/Container Form Component */}
+          <AppBodyEdit addData={ this.addData } />
         </div>
       </div>
     );
