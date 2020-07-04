@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 
-const AppBodyFunc = ({ data }) => {
+const AppBodyFunc = ({ data, deleteData }) => {
     const dataList = data.map( datum =>{
 
         // using if else conditional statement
@@ -23,6 +23,7 @@ const AppBodyFunc = ({ data }) => {
                         <p>Title II: { datum.title },</p>
                         <p>Sex: { datum.sex }</p>
                         <p>Age: { datum.age }</p>
+                        <button onClick={ () => { deleteData(datum.id) } }>DELETE USER</button>
                     </div>
                 )  : null;
     })

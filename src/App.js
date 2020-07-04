@@ -24,6 +24,18 @@ class App extends Component {
     })
   }
 
+  deleteData = (id) => {
+    console.log(id);
+
+    let data = this.state.data.filter( datum => {
+      return datum.id !== id;
+    })
+
+    this.setState({
+      data: data
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -36,7 +48,7 @@ class App extends Component {
           {/* Class/Container Component */}
           <AppBody data={ this.state.data } />
           {/* Functional/UI Component */}
-          <AppBodyFunc data={ this.state.data } />
+          <AppBodyFunc deleteData={ this.deleteData } data={ this.state.data } />
           {/* Class/Container Form Component */}
           <AppBodyEdit addData={ this.addData } />
         </div>
