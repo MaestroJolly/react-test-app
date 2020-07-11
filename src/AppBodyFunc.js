@@ -19,7 +19,7 @@ const AppBodyFunc = ({ data, deleteData }) => {
         // }
 
         return ( datum.age > 20 ) ? (
-                    <div key={ datum.id }>
+                    <div className="data" key={ datum.id }>
                         <p>Title II: { datum.title },</p>
                         <p>Sex: { datum.sex }</p>
                         <p>Age: { datum.age }</p>
